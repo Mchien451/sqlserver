@@ -1,0 +1,20 @@
+CREATE INDEX idx_CarrierTrackingNumber
+ON [Sales].[SalesOrderDetail] ([CarrierTrackingNumber]);
+
+SET STATISTICS IO ON;
+
+SELECT *
+FROM  [Sales].[SalesOrderDetail]
+WHERE [CarrierTrackingNumber]= '1B2B-492F-A9';
+
+SET STATISTICS IO OFF;
+
+KHI CH CÓ INDEX
+Table 'SalesOrderDetail'. Scan count 1, ((((logical reads 1238)))), physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+
+Completion time: 2024-06-21T22:52:55.6252977+07:00
+
+KHI CÓ
+Table 'SalesOrderDetail'. Scan count 1, ((((logical reads 69)))), physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+
+Completion time: 2024-06-21T22:52:55.6252977+07:00
